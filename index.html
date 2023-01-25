@@ -3,11 +3,43 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link rel="stylesheet" href="css/stitestyle.css"/>
+    <link rel="stylesheet" href="css/stitestyle.css" />
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <title>LOGIN</title>
 </head>
 <body>
-    <h1>Salamchik</h1>
-
-    <script src="js/site.js"></script>
+    <form action="/">
+        <br>
+        <h1>LOGIN</h1>
+        <input type="email" name="email" id="email" placeholder="E-mail"><br>
+        <input type="password" name="password" id="password" placeholder="Password"><br>
+        <div class="btn">
+            <input type="submit" name="submit" id="button" value="LOGIN">
+            <script>
+                var a = true;
+                $('#button').on('mouseenter', function (e) {
+                    if ($('#email').val() == "" || $('#password').val() == "") {
+                        if (a) {
+                            a = false;
+                            $(this).css({
+                                'margin-left': -200,
+                            });
+                        }
+                        else {
+                            a = true;
+                            $(this).css({
+                                'margin-left': 200,
+                            });
+                        }
+                    }
+                    else {
+                        $(this).css({
+                            'margin-left': 0,
+                        });
+                    }
+                });
+            </script>
+        </div>
+    </form>
 </body>
 </html>
